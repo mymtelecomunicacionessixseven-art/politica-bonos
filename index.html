@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Bonificaciones al Personal Técnico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Política leíble de corrido, con calculadoras dentro de las secciones que tienen números */
+:root{--bg:#f2f5f8;--panel:#fff;--tinta:#13202c;--suave:#51606f;--linea:#ccd6df;--azul:#0b5cad;--azul-f:#0a3768;--azul-t:#e3edf8;--nar:#c2570c;--nar-t:#fdeee0;--ok:#14713f;--ok-t:#dff2e6;--mal:#b3261e;--mal-t:#fae5e3;--sobre:#fff;
+--disp:'Barlow Condensed','Arial Narrow',Arial,sans-serif;--txt:'Source Sans 3','Segoe UI',Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0f161d;--panel:#18232d;--tinta:#e9eff4;--suave:#a1afbc;--linea:#2f3d4a;--azul:#70b2f3;--azul-f:#0a2a4e;--azul-t:#19304a;--nar:#f2a765;--nar-t:#3b2612;--ok:#70d49c;--ok-t:#153426;--mal:#f4978f;--mal-t:#3d1c1a;--sobre:#0f161d;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tinta);font:17px/1.55 var(--txt);font-variant-numeric:tabular-nums}
+header.portada{background:var(--azul-f);color:#f4f8fc;padding:clamp(28px,6vw,64px) max(18px,env(safe-area-inset-left,0px)) clamp(24px,4vw,40px)}
+.ancho{max-width:1180px;margin:0 auto}
+.ceja{font:600 15px var(--disp);letter-spacing:1.4px;text-transform:uppercase;color:var(--nar)}
+.portada .ceja{color:#f6b27a}
+.logo{display:block;width:150px;background:#fff;border-radius:6px;padding:6px 10px;margin-bottom:16px}
+h1,h2,h3{font-family:var(--disp);text-transform:uppercase;margin:0;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(38px,7vw,76px);font-weight:700}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:10px}
+h3{font-size:21px;font-weight:700;margin:18px 0 6px}
+.portada p{color:#c8d9ea;max-width:62ch;margin:12px 0 0}
+.datos{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:15px;color:#c8d9ea}
+.datos b{color:#fff}
+.cuerpo{display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:24px max(18px,env(safe-area-inset-right,0px)) 60px max(18px,env(safe-area-inset-left,0px))}
+nav.indice{position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;background:var(--panel);border:1px solid var(--linea);padding:12px}
+nav.indice input{width:100%;padding:7px 9px;border:1px solid var(--linea);border-radius:5px;background:var(--bg);font:inherit;font-size:15px;color:inherit;margin-bottom:8px}
+nav.indice a{display:block;padding:4px 6px;border-radius:4px;color:var(--tinta);text-decoration:none;font-size:15px;line-height:1.3}
+nav.indice a:hover{background:var(--azul-t)}
+nav.indice a.on{background:var(--azul);color:var(--sobre)}
+nav.indice .avance{height:5px;background:var(--linea);border-radius:3px;overflow:hidden;margin:4px 0 10px}
+nav.indice .avance i{display:block;height:100%;background:var(--nar);width:0}
+main{min-width:0;display:grid;gap:16px}
+section.sec{background:var(--panel);border:1px solid var(--linea);padding:clamp(16px,3vw,28px);scroll-margin-top:12px}
+section.sec[hidden]{display:none}
+section.sec p{margin:0 0 10px;max-width:72ch}
+section.sec ul{margin:0 0 10px;padding-left:22px;max-width:70ch}
+.num{color:var(--nar)}
+mark{background:var(--nar-t);color:inherit;padding:0 2px}
+.clave{border-left:4px solid var(--nar);background:var(--nar-t);padding:10px 14px;margin:12px 0;max-width:72ch}
+.herr{border:1px solid var(--azul);background:var(--azul-t);padding:14px 16px;margin-top:14px}
+.herr>.ceja{color:var(--azul);display:block;margin-bottom:6px}
+table{border-collapse:collapse;width:100%}
+th{background:var(--azul);color:var(--sobre);font:600 16px var(--disp);text-transform:uppercase;text-align:left;padding:7px 10px}
+td{padding:5px 10px;border-top:1px solid var(--linea);background:var(--panel)}
+td.n,th.n{text-align:right}
+tr.sub td{font-weight:700;background:var(--bg)}
+.tw{overflow-x:auto;border:1px solid var(--linea)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--linea);background:var(--panel);border-radius:5px;padding:6px 12px;font-weight:600}
+button:hover{border-color:var(--azul)}
+button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
+:focus-visible{outline:2px solid var(--nar);outline-offset:2px}
+.paso{display:flex;gap:4px;align-items:center;justify-content:flex-end}
+.paso button{width:30px;height:30px;padding:0;line-height:1;font-size:18px}
+.paso input{width:56px;text-align:center;padding:4px;border:1px solid var(--linea);border-radius:5px;background:var(--panel)}
+.dos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start}
+.dos>*{min-width:0}
+.total{background:var(--azul-f);color:#f4f8fc;padding:12px 16px}
+.total b{font:700 clamp(38px,6vw,58px)/1 var(--disp);display:block}
+.total span{font-size:15px;color:#c8d9ea}
+.barra{height:12px;background:var(--linea);border-radius:6px;overflow:hidden;margin-top:4px}
+.barra i{display:block;height:100%;background:var(--nar);transition:width .2s}
+.res{padding:10px 14px;font-weight:600;margin-top:10px}
+.res.ok{background:var(--ok-t);color:var(--ok)}.res.mal{background:var(--mal-t);color:var(--mal)}.res.ave{background:var(--nar-t);color:var(--nar)}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chk{display:grid;gap:8px}
+.chk label{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:var(--panel);border:1px solid var(--linea);padding:8px 10px;cursor:pointer}
+.chk input[type=checkbox]{width:18px;height:18px;margin-top:3px}
+.campo{display:grid;gap:4px;margin-bottom:10px}
+.campo input{padding:6px 8px;border:1px solid var(--linea);border-radius:5px;background:var(--panel);max-width:160px}
+.mut{color:var(--suave);font-size:15px}
+.firma{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:16px}
+.firma div{border-top:1px solid var(--tinta);padding-top:6px;min-height:70px;display:flex;align-items:flex-end}
+.vacio{padding:20px;text-align:center;color:var(--suave)}
+@media (max-width:820px){.cuerpo{grid-template-columns:1fr}nav.indice{position:static;max-height:none}}
+</style>
+</head>
+<body>
+<header class="portada"><div class="ancho">
+  <img class="logo" src="logo.png" alt="MYM Telecomunicaciones" onerror="this.remove()">
+  <span class="ceja">M&amp;M Telecomunicaciones S.A.C. · Gerencia General</span>
+  <h1>Política de bonificaciones al personal técnico</h1>
+  <p>Criterios, condiciones y lineamientos para el bono variable de las cuadrillas. Lee cada sección y prueba las calculadoras con los números de tu cuadrilla.</p>
+  <div class="datos"><span>Vigente desde <b>01 de agosto de 2026</b></span><span>Alcance <b>todo el personal técnico, todas las sedes</b></span><span>Pago <b>al cierre de cada mes</b></span></div>
+</div></header>
+
+<div class="cuerpo ancho">
+<nav class="indice" aria-label="Índice de la política">
+  <label for="buscar" class="ceja" style="display:block;margin-bottom:4px">Buscar en la política</label>
+  <input id="buscar" type="search" placeholder="Ej.: acta, garantía, faltas">
+  <div class="mut" id="leido">Leído: 0 de 14</div>
+  <div class="avance"><i id="avance"></i></div>
+  <div id="enlaces"></div>
+</nav>
+
+<main id="secciones">
+
+<section class="sec" id="s1" data-t="1. Objetivo"><span class="ceja">Sección 1</span><h2>Objetivo</h2>
+<p>La presente Política de Bonificaciones tiene por finalidad establecer los criterios, condiciones y lineamientos para el otorgamiento de incentivos económicos al personal técnico de M&amp;M Telecomunicaciones S.A.C., promoviendo una cultura de alto desempeño, productividad, calidad, disciplina operativa y orientación al cliente.</p>
+<p>Las bonificaciones constituyen un reconocimiento económico variable por el cumplimiento de objetivos operativos y de calidad, buscando incentivar la mejora continua y el compromiso con los estándares exigidos por nuestros clientes.</p>
+<div class="clave">Las bonificaciones no constituyen remuneración fija, permanente ni un derecho adquirido, siendo un beneficio de carácter extraordinario, sujeto al cumplimiento de las condiciones establecidas en la presente política y a la evaluación de la Gerencia General.</div>
+</section>
+
+<section class="sec" id="s2" data-t="2. Alcance"><span class="ceja">Sección 2</span><h2>Alcance</h2>
+<p>La presente política es aplicable a todo el personal técnico de M&amp;M Telecomunicaciones S.A.C. que preste servicios en cualquiera de las sedes operativas a nivel nacional.</p>
+<p>Su aplicación estará sujeta a la continuidad de las operaciones, a la rentabilidad de los proyectos y al cumplimiento de los indicadores establecidos por la empresa cliente y por M&amp;M Telecomunicaciones S.A.C.</p>
+</section>
+
+<section class="sec" id="s3" data-t="3. Vigencia"><span class="ceja">Sección 3</span><h2>Vigencia</h2>
+<p>La presente Política de Bonificaciones entra en vigencia a partir del <b>01 de agosto de 2026</b> y permanecerá vigente hasta que la Gerencia General disponga su modificación, actualización o derogación.</p>
+</section>
+
+<section class="sec" id="s4" data-t="4. Tabla de bonificaciones"><span class="ceja">Sección 4</span><h2>Tabla de bonificaciones</h2>
+<p>Las bonificaciones se otorgarán <b>por cuadrilla</b> de acuerdo con la siguiente tabla. Cambia las cantidades para calcular el pago de tu cuadrilla.</p>
+<div class="herr"><span class="ceja">Calculadora · pago regular y meta duplicadora</span>
+<div class="dos">
+  <div class="tw"><table><thead><tr><th>Tipo de servicio</th><th class="n">Bono</th><th class="n">Cantidad</th><th class="n">Pago</th></tr></thead><tbody id="tabla"></tbody>
+    <tfoot><tr class="sub"><td colspan="3">Pago regular</td><td class="n" id="tReg"></td></tr></tfoot></table></div>
+  <div style="display:grid;gap:12px">
+    <div class="total"><span>Pago regular</span><b id="cReg"></b><span id="cDob"></span></div>
+    <div><b>Meta duplicadora:</b> <span id="cAct"></span><div class="barra"><i id="cBar"></i></div><div class="mut" id="cDet" style="margin-top:4px"></div></div>
+    <div class="opts" style="margin-top:0"><button class="pri" data-ej="1">Ejemplo de la política</button><button data-ej="0">Poner en cero</button></div>
+    <p class="mut">El ejemplo de la política da 462 de pago regular y 924 con el × 2. Los montos se muestran en soles; la tabla no fija monto para instalación B2B. Es un cálculo antes de filtros y descuentos (secciones 6 a 10).</p>
+  </div>
+</div></div>
+<p style="margin-top:12px">La Gerencia General podrá incorporar, modificar o eliminar conceptos de bonificación de acuerdo con las necesidades operativas o comerciales.</p>
+</section>
+
+<section class="sec" id="s5" data-t="5. Meta duplicadora"><span class="ceja">Sección 5</span><h2>Meta duplicadora</h2>
+<p>Con la finalidad de incentivar el cumplimiento de los objetivos comerciales y operativos, la empresa podrá aplicar un factor multiplicador <b>(× 2) sobre el monto total</b> de la bonificación obtenida, siempre que la cuadrilla cumpla simultáneamente con las metas de productividad establecidas y los indicadores de calidad definidos por la empresa cliente.</p>
+<div class="clave"><b>Meta de productividad: 75 actividades en el mes.</b> Suman juntas las instalaciones (horizontal, vertical, B2B y winback) y los soportes (averías individuales con o sin cableado). Ejemplo: 50 instalaciones + 25 soportes = 75. Las acometidas largas, rutinas y adicionales suman dinero, pero no cuentan para la meta.</div>
+<p>La aplicación del multiplicador estará sujeta a validación por parte de la Gerencia de Operaciones y la Gerencia General.</p>
+</section>
+
+<section class="sec" id="s6" data-t="6. Condiciones para acceder"><span class="ceja">Sección 6</span><h2>Condiciones para acceder a la bonificación</h2>
+<p>Para acceder al pago de las bonificaciones, el colaborador deberá cumplir íntegramente las siguientes condiciones:</p>
+<h3>6.1 Pago de bonificaciones</h3>
+<ul><li>El pago de las bonificaciones se efectuará al cierre de cada mes, previa validación de la producción ejecutada, cumplimiento de los indicadores operativos y de calidad, y aprobación de la Gerencia de Operaciones.</li>
+<li>El cálculo considerará exclusivamente los servicios que cumplan con los requisitos establecidos en la presente política y que hayan sido debidamente sustentados y validados.</li>
+<li>La empresa realizará el proceso de revisión y liquidación correspondiente, procurando que el abono se efectúe dentro del último día calendario de cada mes.</li></ul>
+<h3>6.2 Permanencia laboral</h3>
+<p>Las bonificaciones serán otorgadas únicamente al personal que mantenga vínculo laboral vigente con la empresa en la fecha de pago.</p>
+<p>En consecuencia, los colaboradores que hayan cesado por renuncia, término de contrato, despido u otra causal antes de la fecha de pago, perderán el derecho a percibir la bonificación correspondiente.</p>
+<h3>6.3 Calidad de la producción</h3>
+<p>Será requisito indispensable que el colaborador subsane el <b>100 % de los códigos observados</b> por el área de Validaciones dentro del plazo máximo de <b>24 horas</b>.</p>
+<p>No serán considerados para efectos del cálculo de bonificaciones:</p>
+<ul><li>Códigos observados.</li><li>Códigos completados fuera del plazo establecido.</li><li>Códigos pendientes de validación.</li></ul>
+<div class="clave">La existencia de un solo código en dichas condiciones inhabilitará a la cuadrilla para acceder a la bonificación correspondiente al período evaluado.</div>
+<h3>6.4 Indicador de averías de infancia</h3>
+<p>Las cuadrillas cuyo índice de averías de infancia supere el <b>3 %</b> durante el período evaluado no serán elegibles para recibir bonificación, en concordancia con los criterios de evaluación establecidos por la empresa cliente.</p>
+<div class="herr"><span class="ceja">Calculadora · averías de infancia</span>
+  <div class="dos">
+    <div><div class="campo"><label for="infI">Instalaciones del período</label><input id="infI" type="number" min="1" value="80" inputmode="numeric"></div>
+      <div class="campo"><label for="infA">Averías de infancia</label><input id="infA" type="number" min="0" value="2" inputmode="numeric"></div></div>
+    <div><div class="res" id="infR"></div><p class="mut" style="margin-top:8px" id="infMax"></p></div>
+  </div></div>
+<h3>6.5 Experiencia del personal</h3>
+<p>El personal técnico podrá acceder a la bonificación desde su primer mes de labores, siempre que cumpla íntegramente con los requisitos establecidos en la presente política.</p>
+<h3>6.6 Sustento documentario</h3>
+<p>Para que un servicio sea considerado dentro del cálculo de la bonificación será obligatorio:</p>
+<ul><li>Contar con el Acta de Atención firmada por el cliente.</li><li>Que todos los integrantes de la cuadrilla firmen el acta correspondiente.</li><li>Registrar y cargar la documentación dentro del plazo establecido por la empresa.</li><li>En caso de participar personal nuevo, éste también deberá consignar su firma.</li></ul>
+<p>Los servicios que no cuenten con el sustento documentario requerido no serán considerados para el cálculo de la bonificación.</p>
+<h3>6.7 Garantías</h3>
+<p>Los servicios de instalación que generen un código de garantía dentro de los <b>treinta (30) días</b> posteriores a su ejecución quedarán excluidos del cálculo de bonificaciones, tanto la instalación original como la atención de la garantía correspondiente.</p>
+<p>Preferentemente, dichos servicios deberán ser atendidos por la misma cuadrilla responsable de la instalación inicial.</p>
+</section>
+
+<section class="sec" id="s7" data-t="7. Descuentos"><span class="ceja">Sección 7</span><h2>Descuentos sobre la bonificación</h2>
+<p>La empresa podrá efectuar descuentos sobre el monto de la bonificación cuando existan pérdidas o daños ocasionados por negligencia del trabajador, incluyendo, entre otros:</p>
+<ul><li>Equipos.</li><li>Materiales.</li><li>Herramientas.</li><li>Vehículos.</li><li>Implementos asignados.</li><li>Documentación vencida o no actualizada (licencia de conducir, DNI, carné de extranjería u otros documentos obligatorios).</li></ul>
+</section>
+
+<section class="sec" id="s8" data-t="8. Conducta y disciplina"><span class="ceja">Sección 8</span><h2>Conducta y disciplina</h2>
+<p>No accederán al beneficio de bonificación aquellos colaboradores que durante el período evaluado registren:</p>
+<ul><li>Memorándums disciplinarios.</li><li>Incumplimiento del Reglamento Interno.</li><li>Conductas contrarias a los valores corporativos.</li><li>Actitudes que afecten el clima laboral o la operación.</li></ul>
+<p>La empresa reconoce que el desempeño técnico debe ir acompañado de una conducta ética, profesional y alineada con los principios institucionales.</p>
+</section>
+
+<section class="sec" id="s9" data-t="9. Penalidades del cliente"><span class="ceja">Sección 9</span><h2>Penalidades del cliente</h2>
+<p>Las penalidades económicas impuestas por la empresa cliente como consecuencia de errores, incumplimientos o deficiencias atribuibles a una cuadrilla o técnico serán descontadas de la bonificación correspondiente.</p>
+<p>Cuando el monto de la penalidad exceda el valor de la bonificación del período, la empresa podrá efectuar el descuento en bonificaciones futuras o acordar un cronograma de recuperación.</p>
+<div class="herr"><span class="ceja">Calculadora · descuentos y penalidades (secciones 7 y 9)</span>
+  <div class="dos">
+    <div><div class="campo"><label for="pBono">Bono del período (S/)</label><input id="pBono" type="number" min="0" value="231" inputmode="decimal"></div>
+      <div class="campo"><label for="pDesc">Descuentos por negligencia (S/)</label><input id="pDesc" type="number" min="0" value="0" inputmode="decimal"></div>
+      <div class="campo"><label for="pPen">Penalidad del cliente (S/)</label><input id="pPen" type="number" min="0" value="300" inputmode="decimal"></div></div>
+    <div><div class="res" id="pR"></div></div>
+  </div></div>
+</section>
+
+<section class="sec" id="s10" data-t="10. Asistencia"><span class="ceja">Sección 10</span><h2>Asistencia</h2>
+<p>No accederán a bonificación aquellos colaboradores que registren <b>dos (02) o más inasistencias injustificadas</b> durante el período evaluado.</p>
+<p>Las ausencias únicamente serán consideradas justificadas cuando exista descanso médico válido o licencia previamente autorizada por la empresa.</p>
+</section>
+
+<section class="sec" id="s11" data-t="11. Actualización de datos"><span class="ceja">Sección 11</span><h2>Actualización de datos</h2>
+<p>Todo colaborador que modifique su información bancaria deberá comunicarlo oportunamente al área de Recursos Humanos para la actualización de sus datos y evitar retrasos en el pago de sus bonificaciones.</p>
+</section>
+
+<section class="sec" id="s12" data-t="12. Consultas y reclamos"><span class="ceja">Sección 12</span><h2>Consultas y reclamos</h2>
+<p>Toda consulta relacionada con el cálculo o pago de bonificaciones deberá canalizarse inicialmente a través del Coordinador correspondiente.</p>
+<p>Cualquier observación deberá sustentarse documentalmente para permitir su validación por las áreas responsables.</p>
+</section>
+
+<section class="sec" id="s13" data-t="13. Facultad de modificación"><span class="ceja">Sección 13</span><h2>Facultad de modificación</h2>
+<p>La presente política podrá ser modificada, suspendida o actualizada en cualquier momento por decisión de la Gerencia General, en función de cambios en:</p>
+<ul><li>Las condiciones comerciales con los clientes.</li><li>Los indicadores de desempeño.</li><li>La rentabilidad de la operación.</li><li>Las necesidades del negocio.</li><li>Las políticas internas de la empresa.</li></ul>
+<p>Toda modificación será comunicada oportunamente a los colaboradores.</p>
+</section>
+
+<section class="sec" id="s14" data-t="14. Disposición final"><span class="ceja">Sección 14</span><h2>Disposición final</h2>
+<p>La participación en el presente programa de bonificaciones implica el conocimiento y aceptación íntegra de las condiciones establecidas en esta política.</p>
+<p>Los casos no previstos serán resueltos por la Gerencia General en coordinación con la Gerencia de Operaciones y el área de Recursos Humanos.</p>
+<p style="margin-top:16px">Lima, 01 de agosto de 2026<br><b>M&amp;M TELECOMUNICACIONES S.A.C.</b><br>GERENCIA GENERAL</p>
+<h3>Firma del trabajador</h3>
+<p class="mut">La firma se registra en el documento físico de la política.</p>
+<div class="firma"><div>Nombre</div><div>DNI</div><div>Firma</div></div>
+</section>
+
+<section class="sec" id="evaluar" data-t="¿Cobro este mes?"><span class="ceja">Resumen práctico</span><h2>¿Cobro este mes?</h2>
+<p>Marca lo que pasó en el período. Cada punto dice qué sección de la política lo pide.</p>
+<div class="dos">
+  <div class="chk" id="chk"></div>
+  <div><div class="res" id="evR"></div><ul class="mut" id="evM" style="margin-top:8px"></ul></div>
+</div>
+</section>
+
+<div class="vacio" id="sinRes" hidden>Ninguna sección contiene ese texto.</div>
+</main>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const sol=n=>'S/ '+(Math.round((+n||0)*100)/100).toLocaleString('es-PE');
+
+/* Índice y avance de lectura */
+const SECS=[...document.querySelectorAll('section.sec')];
+$('#enlaces').innerHTML=SECS.map(s=>`<a href="#${s.id}" data-id="${s.id}">${s.dataset.t}</a>`).join('');
+const leidas=new Set();
+const vis=new IntersectionObserver(es=>{for(const e of es){if(!e.isIntersecting)continue;const id=e.target.id;
+  document.querySelectorAll('#enlaces a').forEach(a=>a.classList.toggle('on',a.dataset.id===id));
+  if(/^s\d+$/.test(id))leidas.add(id);$('#leido').textContent='Leído: '+leidas.size+' de 14';$('#avance').style.width=(leidas.size/14*100)+'%';}},{rootMargin:'-20% 0px -60% 0px'});
+SECS.forEach(s=>vis.observe(s));
+
+/* Búsqueda: oculta las secciones sin el texto y resalta las coincidencias */
+const sinTilde=t=>t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+$('#buscar').addEventListener('input',e=>{const q=sinTilde(e.target.value.trim());let n=0;
+  /* Quita resaltados anteriores sin rehacer el HTML, para no romper las calculadoras */
+  document.querySelectorAll('main mark').forEach(m=>{const p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});
+  for(const s of SECS){const ok=!q||sinTilde(s.textContent).includes(q);s.hidden=!ok;if(ok&&q)marcar(s,q);
+    if(!s.hidden)n++;document.querySelector(`#enlaces a[data-id="${s.id}"]`).hidden=s.hidden;}
+  $('#sinRes').hidden=n>0;});
+function marcar(raiz,q){const w=document.createTreeWalker(raiz,NodeFilter.SHOW_TEXT),nodos=[];while(w.nextNode())nodos.push(w.currentNode);
+  for(const t of nodos){const i=sinTilde(t.data).indexOf(q);if(i<0)continue;const r=document.createRange();r.setStart(t,i);r.setEnd(t,i+q.length);const m=document.createElement('mark');r.surroundContents(m);}}
+
+/* Sección 4 y 5: tabla de bonificaciones; tipo i = instalación, s = soporte (cuentan para la meta) */
+const META=75;
+const T=[['hor','Instalación horizontal',4,60,'i'],['ver','Instalación vertical',3,15,'i'],['b2b','Instalación B2B',null,0,'i'],['win','Instalación winback',2,5,'i'],
+ ['ave','Reparación de averías individuales sin cableado',2,15,'s'],['rec','Reparación de averías individuales con cableado',3,10,'s'],
+ ['ac1','Suplemento por acometida larga 201 a 350 m',2,5],['ac2','Suplemento por acometida larga 351 a 500 m',4,3],['rut','Actividades complementarias (rutinas)',2,15],
+ ['-','Adicionales en instalaciones'],['tv','TV Box',1,10],['app','App MiFibra',1,35],['mesh','Instalación segundo mesh',1,10]];
+$('#tabla').innerHTML=T.map(([k,n,b])=>k==='-'?`<tr class="sub"><td colspan="4">${n}</td></tr>`:
+ `<tr><td><label for="q_${k}">${n}</label></td><td class="n">${b==null?'<span class="mut">Por definir</span>':b}</td><td><div class="paso"><button data-d="-1" data-k="${k}" aria-label="Menos ${n}">−</button><input id="q_${k}" type="number" min="0" inputmode="numeric"><button data-d="1" data-k="${k}" aria-label="Más ${n}">+</button></div></td><td class="n" id="p_${k}"></td></tr>`).join('');
+const FIL=T.filter(t=>t[0]!=='-');
+function calcTabla(){let reg=0,ni=0,ns=0;
+  for(const [k,,b,,t] of FIL){const v=Math.max(0,Math.floor(+$('#q_'+k).value||0)),p=v*(b||0);reg+=p;$('#p_'+k).textContent=p;if(t==='i')ni+=v;if(t==='s')ns+=v;}
+  const a=ni+ns;$('#tReg').textContent=reg;$('#cReg').textContent=sol(reg);
+  $('#cAct').textContent=a+' de '+META+' actividades';$('#cBar').style.width=Math.min(100,a/META*100)+'%';$('#cDet').textContent=ni+' instalaciones + '+ns+' soportes';
+  $('#cDob').textContent=a>=META?'Con × 2 validado por las gerencias: '+sol(reg*2):'Para el × 2 faltan '+(META-a)+' actividades';
+  if(+$('#pBono').dataset.auto!==0){$('#pBono').value=reg;calcPen();}}
+const fijar=f=>{FIL.forEach(t=>$('#q_'+t[0]).value=f(t));calcTabla();};
+$('#tabla').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;const n=$('#q_'+b.dataset.k);n.value=Math.max(0,(+n.value||0)+ +b.dataset.d);calcTabla();});
+$('#tabla').addEventListener('input',calcTabla);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-ej]');if(b)fijar(t=>b.dataset.ej==='1'?t[3]:0);});
+
+/* Sección 6.4: averías de infancia */
+function calcInf(){const i=Math.max(1,+$('#infI').value||1),a=Math.max(0,+$('#infA').value||0),p=100*a/i,lim=Math.floor(i*0.03);
+  const r=$('#infR');r.className='res '+(p>3?'mal':'ok');r.textContent='Índice: '+p.toFixed(1)+' % — '+(p>3?'supera el 3 %: la cuadrilla no es elegible.':'dentro del 3 %: cumple.');
+  $('#infMax').textContent='Con '+i+' instalaciones, el máximo para seguir elegible es '+lim+' avería'+(lim===1?'':'s')+' de infancia.';}
+['infI','infA'].forEach(id=>$('#'+id).addEventListener('input',calcInf));
+
+/* Secciones 7 y 9: descuentos y penalidades */
+function calcPen(){const b=Math.max(0,+$('#pBono').value||0),d=Math.max(0,+$('#pDesc').value||0),p=Math.max(0,+$('#pPen').value||0),neto=b-d-p,r=$('#pR');
+  r.className='res '+(neto>=0?'ok':'ave');
+  r.innerHTML=neto>=0?'Recibe '+sol(neto)+' en este período.':'Este período recibe S/ 0. Quedan '+sol(-neto)+' por descontar de bonos futuros o en un cronograma de recuperación (sección 9).';}
+['pBono','pDesc','pPen'].forEach(id=>$('#'+id).addEventListener('input',e=>{if(id==='pBono')$('#pBono').dataset.auto=0;calcPen();}));
+
+/* Resumen: ¿cobro este mes? Cuadrilla = afecta a todos; persona = solo al técnico */
+const EV=[['cod','Tenemos un código observado, fuera de plazo o pendiente de validación','6.3','Toda la cuadrilla queda sin bono del período.'],
+ ['inf','Las averías de infancia superan el 3 %','6.4','La cuadrilla no es elegible.'],
+ ['ces','Ya no trabajo en la empresa en la fecha de pago','6.2','Se pierde el derecho a la bonificación.'],
+ ['fal','Tengo 2 o más inasistencias injustificadas','10','No accede a la bonificación.'],
+ ['mem','Tengo un memorándum o falta de conducta','8','No accede a la bonificación.'],
+ ['act','Algún servicio no tiene acta firmada por el cliente y por todos los integrantes','6.6','Solo ese servicio no cuenta; el resto sí.'],
+ ['gar','Una instalación tuvo garantía dentro de 30 días','6.7','No cuentan ni la instalación ni la atención de la garantía.'],
+ ['pen','Hay descuentos o penalidades del cliente','7 y 9','Se restan del bono; si superan el bono, quedan a futuro.']];
+const CORTA=['cod','inf','ces','fal','mem'];
+$('#chk').innerHTML=EV.map(([k,t,s])=>`<label><input type="checkbox" data-ev="${k}"><span>${t} <span class="mut">· sección ${s}</span></span></label>`).join('');
+function calcEv(){const m=[...document.querySelectorAll('[data-ev]:checked')].map(c=>c.dataset.ev),corta=m.filter(k=>CORTA.includes(k)),r=$('#evR');
+  r.className='res '+(corta.length?'mal':m.length?'ave':'ok');
+  r.textContent=corta.length?'No cobras este período.':m.length?'Cobras, pero con menos monto.':'Cobras según tu producción validada.';
+  $('#evM').innerHTML=m.map(k=>{const e=EV.find(x=>x[0]===k);return `<li>Sección ${e[2]}: ${e[3]}</li>`}).join('');}
+$('#chk').addEventListener('change',calcEv);
+
+fijar(t=>t[3]);calcInf();calcEv();
+</script>
+</body>
+</html>
