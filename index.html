@@ -122,8 +122,8 @@ button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
   <div style="display:grid;gap:12px">
     <div class="total"><span>Pago regular</span><b id="cReg"></b><span id="cDob"></span></div>
     <div><b>Meta duplicadora:</b> <span id="cAct"></span><div class="barra"><i id="cBar"></i></div><div class="mut" id="cDet" style="margin-top:4px"></div></div>
-    <div class="opts" style="margin-top:0"><button class="pri" data-ej="1">Ejemplo de la política</button><button data-ej="0">Poner en cero</button></div>
-    <p class="mut">El ejemplo de la política da 462 de pago regular y 924 con el × 2. Los montos se muestran en soles; la tabla no fija monto para instalación B2B. Es un cálculo antes de filtros y descuentos (secciones 6 a 10).</p>
+    <div class="opts" style="margin-top:0"><button class="pri" data-ej="1">Ver ejemplo</button><button data-ej="0">Poner en cero</button></div>
+    <p class="mut">El ejemplo da 465 de pago regular y 930 con el × 2. Montos en soles. Solo estos seis conceptos generan bono. Es un cálculo antes de filtros y descuentos (secciones 6 a 10).</p>
   </div>
 </div></div>
 <p style="margin-top:12px">La Gerencia General podrá incorporar, modificar o eliminar conceptos de bonificación de acuerdo con las necesidades operativas o comerciales.</p>
@@ -131,7 +131,7 @@ button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
 
 <section class="sec" id="s5" data-t="5. Meta duplicadora"><span class="ceja">Sección 5</span><h2>Meta duplicadora</h2>
 <p>Con la finalidad de incentivar el cumplimiento de los objetivos comerciales y operativos, la empresa podrá aplicar un factor multiplicador <b>(× 2) sobre el monto total</b> de la bonificación obtenida, siempre que la cuadrilla cumpla simultáneamente con las metas de productividad establecidas y los indicadores de calidad definidos por la empresa cliente.</p>
-<div class="clave"><b>Meta de productividad: 75 actividades en el mes.</b> Suman juntas las instalaciones (horizontal, vertical, B2B y winback) y los soportes (averías individuales con o sin cableado). Ejemplo: 50 instalaciones + 25 soportes = 75. Las acometidas largas, rutinas y adicionales suman dinero, pero no cuentan para la meta.</div>
+<div class="clave"><b>Meta de productividad: 75 actividades en el mes.</b> Suman juntas las instalaciones (horizontal, vertical y B2B) y los soportes (averías individuales con o sin cableado). Ejemplo: 50 instalaciones + 25 soportes = 75. Las rutinas suman dinero, pero no cuentan para la meta.</div>
 <p>La aplicación del multiplicador estará sujeta a validación por parte de la Gerencia de Operaciones y la Gerencia General.</p>
 </section>
 
@@ -166,7 +166,7 @@ button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
 <h3>6.7 Garantías</h3>
 <p>Los servicios de instalación que generen un código de garantía dentro de los <b>treinta (30) días</b> posteriores a su ejecución quedarán excluidos del cálculo de bonificaciones, tanto la instalación original como la atención de la garantía correspondiente.</p>
 <p>Preferentemente, dichos servicios deberán ser atendidos por la misma cuadrilla responsable de la instalación inicial.</p>
-<div class="clave"><b>Garantías después del pago.</b> Como el bono se paga al cierre del mismo mes, una instalación puede generar su código de garantía cuando ya fue pagada. En ese caso, el monto pagado por esa instalación (con sus adicionales) se descontará de la bonificación del mes siguiente. Si el bono de ese mes no alcanza, la diferencia se descontará de bonificaciones futuras.</div>
+<div class="clave"><b>Garantías después del pago.</b> Como el bono se paga al cierre del mismo mes, una instalación puede generar su código de garantía cuando ya fue pagada. En ese caso, el monto pagado por esa instalación se descontará de la bonificación del mes siguiente. Si el bono de ese mes no alcanza, la diferencia se descontará de bonificaciones futuras.</div>
 </section>
 
 <section class="sec" id="s7" data-t="7. Descuentos"><span class="ceja">Sección 7</span><h2>Descuentos sobre la bonificación</h2>
@@ -259,10 +259,9 @@ function marcar(raiz,q){const w=document.createTreeWalker(raiz,NodeFilter.SHOW_T
 
 /* Sección 4 y 5: tabla de bonificaciones; tipo i = instalación, s = soporte (cuentan para la meta) */
 const META=75;
-const T=[['hor','Instalación horizontal',4,60,'i'],['ver','Instalación vertical',3,15,'i'],['b2b','Instalación B2B',null,0,'i'],['win','Instalación winback',2,5,'i'],
+const T=[['hor','Instalación horizontal',5,60,'i'],['ver','Instalación vertical',5,15,'i'],['b2b','Instalación B2B',5,0,'i'],
  ['ave','Reparación de averías individuales sin cableado',2,15,'s'],['rec','Reparación de averías individuales con cableado',3,10,'s'],
- ['ac1','Suplemento por acometida larga 201 a 350 m',2,5],['ac2','Suplemento por acometida larga 351 a 500 m',4,3],['rut','Actividades complementarias (rutinas)',2,15],
- ['-','Adicionales en instalaciones'],['tv','TV Box',1,10],['app','App MiFibra',1,35],['mesh','Instalación segundo mesh',1,10]];
+ ['rut','Actividades complementarias (rutinas)',2,15]];
 $('#tabla').innerHTML=T.map(([k,n,b])=>k==='-'?`<tr class="sub"><td colspan="4">${n}</td></tr>`:
  `<tr><td><label for="q_${k}">${n}</label></td><td class="n">${b==null?'<span class="mut">Por definir</span>':b}</td><td><div class="paso"><button data-d="-1" data-k="${k}" aria-label="Menos ${n}">−</button><input id="q_${k}" type="number" min="0" inputmode="numeric"><button data-d="1" data-k="${k}" aria-label="Más ${n}">+</button></div></td><td class="n" id="p_${k}"></td></tr>`).join('');
 const FIL=T.filter(t=>t[0]!=='-');
