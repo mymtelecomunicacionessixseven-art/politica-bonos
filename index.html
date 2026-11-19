@@ -123,7 +123,7 @@ button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
     <div class="total"><span>Pago regular</span><b id="cReg"></b><span id="cDob"></span></div>
     <div><b>Meta duplicadora:</b> <span id="cAct"></span><div class="barra"><i id="cBar"></i></div><div class="mut" id="cDet" style="margin-top:4px"></div></div>
     <div class="opts" style="margin-top:0"><button class="pri" data-ej="1">Ver ejemplo</button><button data-ej="0">Poner en cero</button></div>
-    <p class="mut">El ejemplo da 450 de pago regular y 900 con el × 2. Montos en soles. Solo estos seis conceptos generan bono. Es un cálculo antes de filtros y descuentos (secciones 6 a 10).</p>
+    <p class="mut">El ejemplo llega justo a 75 actividades: 350 de pago regular y 700 con el × 2. Montos en soles. Solo estos seis conceptos generan bono. Es un cálculo antes de filtros y descuentos (secciones 6 a 10).</p>
   </div>
 </div></div>
 <p style="margin-top:12px">La Gerencia General podrá incorporar, modificar o eliminar conceptos de bonificación de acuerdo con las necesidades operativas o comerciales.</p>
@@ -259,8 +259,8 @@ function marcar(raiz,q){const w=document.createTreeWalker(raiz,NodeFilter.SHOW_T
 
 /* Sección 4 y 5: tabla de bonificaciones; tipo i = instalación, s = soporte (cuentan para la meta) */
 const META=75;
-const T=[['hor','Instalación horizontal',5,60,'i'],['ver','Instalación vertical',4,15,'i'],['b2b','Instalación B2B o referido',7,0,'i'],
- ['ave','Reparación de averías individuales sin cableado',2,15,'s'],['rec','Reparación de averías individuales con cableado',3,10,'s'],
+const T=[['hor','Instalación horizontal',5,45,'i'],['ver','Instalación vertical',4,15,'i'],['b2b','Instalación B2B o referido',7,0,'i'],
+ ['ave','Reparación de averías individuales sin cableado',2,10,'s'],['rec','Reparación de averías individuales con cableado',3,5,'s'],
  ['rut','Actividades complementarias (rutinas)',2,15]];
 $('#tabla').innerHTML=T.map(([k,n,b])=>k==='-'?`<tr class="sub"><td colspan="4">${n}</td></tr>`:
  `<tr><td><label for="q_${k}">${n}</label></td><td class="n">${b==null?'<span class="mut">Por definir</span>':b}</td><td><div class="paso"><button data-d="-1" data-k="${k}" aria-label="Menos ${n}">−</button><input id="q_${k}" type="number" min="0" inputmode="numeric"><button data-d="1" data-k="${k}" aria-label="Más ${n}">+</button></div></td><td class="n" id="p_${k}"></td></tr>`).join('');
