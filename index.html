@@ -166,6 +166,7 @@ button.pri{background:var(--azul);border-color:var(--azul);color:var(--sobre)}
 <h3>6.7 Garantías</h3>
 <p>Los servicios de instalación que generen un código de garantía dentro de los <b>treinta (30) días</b> posteriores a su ejecución quedarán excluidos del cálculo de bonificaciones, tanto la instalación original como la atención de la garantía correspondiente.</p>
 <p>Preferentemente, dichos servicios deberán ser atendidos por la misma cuadrilla responsable de la instalación inicial.</p>
+<div class="clave"><b>Garantías después del pago.</b> Como el bono se paga al cierre del mismo mes, una instalación puede generar su código de garantía cuando ya fue pagada. En ese caso, el monto pagado por esa instalación (con sus adicionales) se descontará de la bonificación del mes siguiente. Si el bono de ese mes no alcanza, la diferencia se descontará de bonificaciones futuras.</div>
 </section>
 
 <section class="sec" id="s7" data-t="7. Descuentos"><span class="ceja">Sección 7</span><h2>Descuentos sobre la bonificación</h2>
@@ -295,7 +296,7 @@ const EV=[['cod','Tenemos un código observado, fuera de plazo o pendiente de va
  ['fal','Tengo 2 o más inasistencias injustificadas','10','No accede a la bonificación.'],
  ['mem','Tengo un memorándum o falta de conducta','8','No accede a la bonificación.'],
  ['act','Algún servicio no tiene acta firmada por el cliente y por todos los integrantes','6.6','Solo ese servicio no cuenta; el resto sí.'],
- ['gar','Una instalación tuvo garantía dentro de 30 días','6.7','No cuentan ni la instalación ni la atención de la garantía.'],
+ ['gar','Una instalación tuvo garantía dentro de 30 días','6.7','No cuentan ni la instalación ni la atención de la garantía. Si la instalación ya se pagó, se descuenta del bono del mes siguiente.'],
  ['pen','Hay descuentos o penalidades del cliente','7 y 9','Se restan del bono; si superan el bono, quedan a futuro.']];
 const CORTA=['cod','inf','ces','fal','mem'];
 $('#chk').innerHTML=EV.map(([k,t,s])=>`<label><input type="checkbox" data-ev="${k}"><span>${t} <span class="mut">· sección ${s}</span></span></label>`).join('');
